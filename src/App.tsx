@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { switchUnauthorized } from "./Slices/AppSlice";
+import TestComponent from "./Components/TestComponent";
 
 function App() {
   const p = "srt";
@@ -27,6 +28,7 @@ function App() {
       >
         Click to Increment {dummy}
       </p>
+      <TestComponent />
     </>
   );
 }
