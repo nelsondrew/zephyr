@@ -11,6 +11,7 @@ function App() {
   //@ts-ignore
   if (p === "") {
     console.log("warning");
+    console.log("test");
   }
   console.log("hi");
   const { dummy } = useSelector((state: any) => ({
