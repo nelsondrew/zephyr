@@ -18,28 +18,16 @@ function App() {
     dummy: state.appReducer.dummy,
   }));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p
-          onClick={() => {
-            console.log("cliced");
-            //@ts-ignore
-            dispatch(switchUnauthorized());
-          }}
-        >
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React {dummy}
-        </a>
-      </header>
-    </div>
+    <>
+      <p
+        onClick={() => {
+          //@ts-ignore
+          dispatch(switchUnauthorized());
+        }}
+      >
+        Click to Increment {dummy}
+      </p>
+    </>
   );
 }
 
