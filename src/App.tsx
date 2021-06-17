@@ -1,13 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Provider } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import "./App.css";
+import { switchUnauthorized } from "./Slices/AppSlice";
 
 function App() {
+  const p = "srt";
+  const dispatch = useDispatch();
+  //@ts-ignore
+  if (p === "") {
+    console.log("warning");
+  }
+  console.log("hi");
+  const { dummy } = useSelector((state: any) => ({
+    dummy: state.appReducer.dummy,
+  }));
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p
+          onClick={() => {
+            console.log("cliced");
+            //@ts-ignore
+            dispatch(switchUnauthorized());
+          }}
+        >
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
@@ -16,7 +35,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React {dummy}
         </a>
       </header>
     </div>
