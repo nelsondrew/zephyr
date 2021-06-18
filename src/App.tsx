@@ -6,6 +6,7 @@ import "./App.css";
 import { switchUnauthorized } from "./Slices/AppSlice"; // action
 import TestComponent from "./Components/TestComponent";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ChatComponent from "./Components/ChatComponent.tsx";
 
 function App() {
   const p = "srt";
@@ -22,18 +23,18 @@ function App() {
   return (
     <>
       <Router>
-        <p
+        {/* <p
           onClick={() => {
             //@ts-ignore
             dispatch(switchUnauthorized());
           }}
         >
           Click to Increment {dummy}
-        </p>
+        </p> */}
         {/* <TestComponent /> */}
         <Switch>
           <Route exact path="/chat">
-            <div>This is chat component</div>
+            <ChatComponent />
           </Route>
           <Route exact path="/home">
             <div>This is home component</div>
